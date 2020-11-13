@@ -9,13 +9,13 @@ COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN JENKINS_UC_DOWNLOAD=http://mirrors.jenkins-ci.org jenkins-plugin-cli --verbose -f /usr/share/jenkins/ref/plugins.txt
 ```
 * Change the Helm chart values:
- * avoid plugin overwrites / installation on startup:
+  * avoid plugin overwrites / installation on startup:
     ```
     overwritePlugins: false
     installPlugins: {}
     master.overwritePluginsFromImage: true
     ```
- * change the base image/tag: 
+  * change the base image/tag: 
     ```
      image: "XXXXX/cicd/jenkins"
      tag: "latest"
