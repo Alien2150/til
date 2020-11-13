@@ -2,7 +2,7 @@ Our Jenkins CI System was down due to an issue with Jenkins Update Center: https
 This was causing issues of Jenkins not being able to download the plugins anymore (This is a default behavior when deploying Jenkins using the Helm chart).
 
 The solution:
-* Build your own docker image (Copy the installPlugins into plugins.txt)
+* Build your own docker image (Copy the installPlugins list into plugins.txt)
 ```
 FROM jenkins/jenkins:lts-alpine
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
