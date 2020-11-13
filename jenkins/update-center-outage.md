@@ -8,13 +8,16 @@ FROM jenkins/jenkins:lts-alpine
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN JENKINS_UC_DOWNLOAD=http://mirrors.jenkins-ci.org jenkins-plugin-cli --verbose -f /usr/share/jenkins/ref/plugins.txt
 ```
-* Change the HELM Values:
- * set: ```overwritePlugins: false
+* Change the Helm chart values:
+ * avoid plugin overwrites / installation on startup:
+    ```
+    overwritePlugins: false
     installPlugins: {}
     master.overwritePluginsFromImage: true
     ```
- * change the base image/tag: ```
-image: "772592230491.dkr.ecr.eu-west-1.amazonaws.com/cicd/jenkins"
-```
-
-* Deploy
+ * change the base image/tag: 
+    ```
+     image: "XXXXX/cicd/jenkins"
+     tag: "latest"
+    ```
+* Deploy the new helm chart
