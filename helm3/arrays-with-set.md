@@ -18,7 +18,7 @@ Does not work when there's a value for "foo" set on values.yaml. So fix the orde
 helm template --set foo={bar} -f values.yaml
 ```
 
-## Fixing "Unable to set" 
+## Fixing "Unable to use --set flag" 
 Does not work
 ```
 helm template --set foo={bar} -f values.yaml
