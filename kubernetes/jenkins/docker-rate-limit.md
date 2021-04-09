@@ -4,7 +4,7 @@ Today I was faced by the lovely Docker-Rate issue:
  You have reached your pull rate limit. You may increase the limit by authenticating and upgrading ... 
 ```
 
-But I was a bit suppprised because we do a Pro license and I thought it was correctly configured :) 
+But I was a bit suppprised because we do have a Pro license and I thought it was correctly configured :) 
 In this TIL I learned a lot more about the internals how docker works in Kubernetes / Jenkins.
 
 1. docker.config is (not always) your friend. Docker.config will help you for client based authentication. But there might be cases when this is not being used (e.g other users). Instead use the Kubernetes "ImagePullSecrets" as described here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
