@@ -5,7 +5,7 @@ Today I was faced by the lovely Docker-Rate issue:
 ```
 
 But I was a bit suppprised because we do have a Pro license and I thought it was correctly configured :) 
-In this TIL I learned a lot more about the internals how docker works in Kubernetes / Jenkins.
+In this TIL I will focus more about the internals how Docker works in combination with Kubernetes and Jenkins.
 
 1. docker.config is (not always) your friend. Docker.config will help you for client based authentication. But there might be cases when this is not being used (e.g other users). Instead use the Kubernetes "ImagePullSecrets" as described here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 2. Jenkins - Kubernetes ImagePullSecrets will ONLY help you pulling the pod image specified in the spec file. This will NOT help in cases you run a "docker build command" inside your Jenkinsfile. To fix that use a service-account as described here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#add-imagepullsecrets-to-a-service-account and use "serviceAccount" on the Kubernetes Agent (https://github.com/jenkinsci/kubernetes-plugin)
