@@ -12,7 +12,7 @@ In this TIL I will focus more about the internals how Docker works in combinatio
 
 The final solution:
 
-1. Create a registry secret: ```k create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=<NAME> --docker-password=<ACCESS_TOKEN or PASSWORD> --namespace <NAMESPACE>```
+1. Create a registry secret: ```k create secret docker-registry regcred --docker-server=https://index.docker.io/v2/ --docker-username=<NAME> --docker-password=<ACCESS_TOKEN or PASSWORD> --namespace <NAMESPACE>```
 2. Edit / Create a service-account used for your Jenkins-builds. Attach imagePullSecrets: 
 ```
 apiVersion: v1
