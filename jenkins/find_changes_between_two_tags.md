@@ -1,6 +1,6 @@
 # Issue
 
-GIT_PREVIOUS_COMMIT is not set correctly. This makes it harder to get the proper changelog
+GIT_PREVIOUS_COMMIT is not set correctly when tag checkout is being used. This makes it harder to get the proper changelog
 
 # Fix
 Get previous tag:
